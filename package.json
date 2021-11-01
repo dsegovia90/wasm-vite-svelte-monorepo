@@ -1,0 +1,11 @@
+{
+  "name": "wasm-monorepo",
+  "version": "1.0.0",
+  "author": "Daniel Segovia <segoarce90@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/rust/pkg",
+    "packages/web"
+  ]
+}
