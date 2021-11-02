@@ -11,6 +11,7 @@
   "scripts": {
     "web:dev": "yarn workspace web dev",
     "rust:dev": "cd packages/rust && cargo watch -i .gitignore -i \"pkg/*\" -s \"wasm-pack build --target web\"",
+    "rust:build": "cd packages/rust && wasm-pack build --target web",
     "dev": "concurrently --kill-others-on-fail \"yarn web:dev\"  \"yarn rust:dev\""
   },
   "dependencies": {
