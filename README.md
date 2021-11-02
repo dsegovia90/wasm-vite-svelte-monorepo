@@ -51,8 +51,10 @@ yarn dev
 ```
 13. Enjoy! Got some feedback? Open an issue, or better yet, a PR. If you enjoy this, please star this repo.
 
-## Build
-
+### Locally
+Remeber yarn needs at least one wasm-pack build to cross reference dependencies. If you have not run the build before, run
 
 ## What's next
+This needs to work with a regular CI (ie: vercel/netlify/github pages). Will create a guide for this if there is enough demand for it.
+
 If this gets enough attention, and there demand for it, I will create a template for sveltekit, and potentially for vue and react.
