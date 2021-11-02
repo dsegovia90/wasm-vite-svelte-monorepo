@@ -11,7 +11,7 @@ Assuming a fresh install (no node, no rust)
 ```bash
 nvm install --lts
 ```
-5. Run to verify install
+5. To verify install run
 ```bash
 node -v
 // should output something similar to
@@ -45,14 +45,15 @@ yarn rust:build
 ```bash
 yarn
 ```
-12. To start the development server, run
+12. Install [cargo watch](https://crates.io/crates/cargo-watch)
+```bash
+cargo install cargo-watch
+```
+13. To start the development server, run
 ```
 yarn dev
 ```
-13. Enjoy! Got some feedback? Open an issue, or better yet, a PR. If you enjoy this, please star this repo.
-
-### Locally
-Remeber yarn needs at least one wasm-pack build to cross reference dependencies. If you have not run the build before, run
+14. Enjoy! Got some feedback? Open an issue, or better yet, a PR. If you like this template, please star this repo.
 
 ## What's next
 This needs to work with a regular CI (ie: vercel/netlify/github pages). Will create a guide for this if there is enough demand for it.
