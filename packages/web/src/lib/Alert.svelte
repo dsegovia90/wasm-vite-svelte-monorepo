@@ -1,18 +1,9 @@
 <script lang="ts">
-  import { addArray } from "vite-wasm-functions";
-
-  let count: number = 0;
-  let arr = [];
-  let rustSum = 0
-  const increment = () => {
-    count += 1;
-    arr.push(count);
-    rustSum = addArray(arr)
-  };
+  import { helloWorld } from 'vite-wasm-functions'
 </script>
 
-<button on:click={increment}>
-  Sum of 0 to {count}: {rustSum}
+<button on:click={() => helloWorld()}>
+  Alert from Rust!
 </button>
 
 <style>
@@ -25,7 +16,7 @@
     border-radius: 2em;
     border: 2px solid rgba(255, 62, 0, 0);
     outline: none;
-    width: 300px;
+    width: 200px;
     font-variant-numeric: tabular-nums;
     cursor: pointer;
   }

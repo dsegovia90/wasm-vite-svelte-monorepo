@@ -10,15 +10,29 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
 extern {
-    fn alert(s: &str);
+    fn alert(s: String);
 }
 
 #[wasm_bindgen]
-pub fn greet(name: Option<String>) {
+extern "C" {
+    #[wasm_bindgen(typescript_type = "number[]")]
+    pub type ArrayOfNumbers;
+}
+
+#[wasm_bindgen(js_name="addArray")]
+pub fn add_array(arr: ArrayOfNumbers) -> u32 {
+    let rust_arr: Vec<u32> = arr.into_serde().unwrap();
+    let mut sum: u32 = 0;
+    for element in rust_arr {
+        sum = element + sum
+    }
+    return sum
+}
+
+#[wasm_bindgen(js_name="helloWorld")]
+pub fn hello_world(name: Option<String>) {
     match name {
-        Some(name) => {
-            alert(&format!("Hello {}, wasm-game-of-life!", name))
-        }
-        None => { alert("Hello, wasm-game-of-lifeee!") }
+        Some(name) => alert(format!("Hello {}", name)),
+        None => alert(String::from("Hello world!"))
     }
 }

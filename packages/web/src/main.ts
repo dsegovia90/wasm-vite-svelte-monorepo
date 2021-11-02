@@ -1,12 +1,12 @@
 import App from './App.svelte'
-import init, { greet } from 'vite-wasm-functions'
+import init from 'vite-wasm-functions'
 
-init().then(() => {
-  greet('Daniel')
-})
+const load = async () => {
+  await init()
 
-const app = new App({
-  target: document.getElementById('app')
-})
+  const app = new App({
+    target: document.getElementById('app')
+  })
+}
 
-export default app
+load()
