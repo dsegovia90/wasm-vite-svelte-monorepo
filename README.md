@@ -36,10 +36,16 @@ sudo apt-get update
 sudo apt install build-essential
 
 ```
-10. Yarn needs rust to be build at least once so it can cross reference dependencies in the monorepo. Run in the repo root directory
+10. Yarn needs rust to be built at least once so it can cross reference dependencies in the monorepo. Run in the `packages/rust` directory
 ```bash
-yarn rust:build
-// don't panic, this might take a few seconds
+cd packages/rust
+# build WebAssembly and Javascript wrappers using wasm-pack
+# don't panic, this might take a few seconds
+wasm-pack build --target web
+# Then initialize yarn in the rust directory
+yarn
+# go back to the monorepo root directory
+cd ../..
 ```
 11. Install node dependencies, run
 ```bash
